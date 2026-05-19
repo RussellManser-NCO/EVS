@@ -60,10 +60,10 @@ elif [[ "${model}" == "aigfs" ]]; then
 
         echo "+ /global_det/atmos.${pdy}/" >> ${outfile}
         echo "+ /global_det/atmos.${pdy}/aigfs/" >> ${outfile}
-        echo "+ /global_det/atmos.${pdy}/grid2grid/" >> ${outfile}
-        echo "+ /global_det/atmos.${pdy}/grid2grid/***" >> ${outfile}
-        echo "+ /global_det/atmos.${pdy}/grid2obs/" >> ${outfile}
-        echo "+ /global_det/atmos.${pdy}/grid2obs/***" >> ${outfile}
+        echo "+ /global_det/atmos.${pdy}/aigfs/grid2grid/" >> ${outfile}
+        echo "+ /global_det/atmos.${pdy}/aigfs/grid2grid/***" >> ${outfile}
+        echo "+ /global_det/atmos.${pdy}/aigfs/grid2obs/" >> ${outfile}
+        echo "+ /global_det/atmos.${pdy}/aigfs/grid2obs/***" >> ${outfile}
         echo "+ /global_det/aigfs.${pdy}/" >> ${outfile}
         echo "+ /global_det/aigfs.${pdy}/***" >> ${outfile}
     done
