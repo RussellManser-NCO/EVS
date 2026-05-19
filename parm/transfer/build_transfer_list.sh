@@ -68,3 +68,6 @@ elif [[ "${model}" == "aigfs" ]]; then
         echo "+ /global_det/aigfs.${pdy}/***" >> ${outfile}
     done
 fi
+
+echo "- *" >> ${outfile}
+echo "B 100000" >> ${outfile}
