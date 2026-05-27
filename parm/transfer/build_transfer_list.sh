@@ -42,7 +42,7 @@ if [[ "${model}" == "aigefs" ]]; then
         echo "+ /aigefs/atmos.${pdy}/aigefs/" >> ${outfile}
         echo "+ /aigefs/atmos.${pdy}/aigefs/***" >> ${outfile}
         echo "+ /aigefs/atmos.${pdy}/apcp24_mean/" >> ${outfile}
-        echo "+ /aigefs/atmos.${pdy}/apcp24_mean/" >> ${outfile}
+        echo "+ /aigefs/atmos.${pdy}/apcp24_mean/***" >> ${outfile}
         echo "+ /aigefs/atmos.${pdy}/gefs/" >> ${outfile}
         echo "+ /aigefs/atmos.${pdy}/gefs/***" >> ${outfile}
         echo "+ /aigefs/atmos.${pdy}/hgefs/" >> ${outfile}

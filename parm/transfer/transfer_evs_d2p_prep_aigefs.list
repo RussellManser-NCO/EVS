@@ -26,12 +26,10 @@
 
 /lfs/h2/emc/vpppg/noscrub/emc.vpppg/evs/v2.0/prep/ /lfs/h1/ops/para/com/evs/v2.0/prep/
 + /aigefs/
-+ /aigefs/atmos.20260426/
-+ /aigefs/atmos.20260426/***
-+ /aigefs/atmos.20260427/
-+ /aigefs/atmos.20260427/***
-+ /aigefs/atmos.20260428/
-+ /aigefs/atmos.20260428/***
++ /aigefs/atmos.20260508/
++ /aigefs/atmos.20260508/***
++ /aigefs/atmos.20260509/
++ /aigefs/atmos.20260509/***
 + /aigefs/atmos._PDYm16_/
 + /aigefs/atmos._PDYm16_/***
 + /aigefs/atmos._PDYm15_/

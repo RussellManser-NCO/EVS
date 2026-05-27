@@ -26,15 +26,12 @@
 
 /lfs/h2/emc/vpppg/noscrub/emc.vpppg/evs/v2.0/prep/ /lfs/h1/ops/para/com/evs/v2.0/prep/
 + /global_det/
-+ /global_det/atmos.20260426/
-+ /global_det/atmos.20260426/aigfs/
-+ /global_det/atmos.20260426/aigfs/***
-+ /global_det/atmos.20260427/
-+ /global_det/atmos.20260427/aigfs/
-+ /global_det/atmos.20260427/aigfs/***
-+ /global_det/atmos.20260428/
-+ /global_det/atmos.20260428/aigfs/
-+ /global_det/atmos.20260428/aigfs/***
++ /global_det/atmos.20260508/
++ /global_det/atmos.20260508/aigfs/
++ /global_det/atmos.20260508/aigfs/***
++ /global_det/atmos.20260509/
++ /global_det/atmos.20260509/aigfs/
++ /global_det/atmos.20260509/aigfs/***
 + /global_det/atmos._PDYm16_/
 + /global_det/atmos._PDYm16_/aigfs/
 + /global_det/atmos._PDYm16_/aigfs/***
