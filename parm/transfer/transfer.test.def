@@ -1,0 +1,25 @@
+suite test
+family primary
+family cron
+family transfer
+family v2.4
+family wcoss_2
+  family evs
+    edit MACHINE_PHASE 'p1'
+    edit PACKAGE 'evs'
+    edit model_ver '%evs_ver%'
+      defstatus complete
+      edit transfer_samemachine 'YES'
+      task test_plots
+        defstatus complete
+        label l ""
+        cron 00:00 23:59 00:05
+        edit WALLCLOCK '24:00:00'
+    endfamily   # evs
+  endfamily     # wcoss_2
+endfamily       # v2.4
+endfamily       # transfer
+endfamily       # cron
+endfamily       # primary
+endsuite
+
