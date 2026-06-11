@@ -2,6 +2,12 @@
 
 component=stats
 model=$1
+mode=$2
+
+if [[ -z "${model}" || -z "${mode}" ]]; then
+    echo "Usage $0: model mode"
+    exit 1
+fi
 
 ndays=95
 end=$( date --date="${ndays} days ago" '+%Y%m%d' )
@@ -9,8 +15,23 @@ end=$( date --date="${ndays} days ago" '+%Y%m%d' )
 #src="dev"
 #dest="para"
 
-src_path="/lfs/h2/emc/vpppg/noscrub/emc.vpppg/evs/v2.0/${component}/"
-dest_path="/lfs/h1/ops/para/com/evs/v2.0/${component}/"
+if [[ ! "${model}" =~ aige?fs ]]; then
+   echo "model = ${model} is not a valid option"
+   echo "Valid options are 'aigfs' and 'aigefs'"
+   exit 2
+fi
+
+if [[ "${mode}" == "d2p" ]]; then
+    src_path="/lfs/h2/emc/vpppg/noscrub/emc.vpppg/evs/v2.0/${component}/"
+    dest_path="/lfs/h1/ops/para/com/evs/v2.0/${component}/"
+elif [[ "${mode}" == "para2prod" ]]; then
+    src_path="/lfs/h1/ops/para/com/evs/v2.0/${component}/"
+    dest_path="/lfs/h1/ops/prod/com/evs/v2.0/${component}/"
+else
+    echo "mode = ${mode} is not a valid option."
+    echo "Valid options are 'd2p' and 'para2prod'"
+    exit 3
+fi
 
 get_pdy() {
     local day=$1
@@ -23,7 +44,7 @@ get_pdy() {
 }
 
 if [[ "${model}" == "aigefs" ]]; then
-    outfile=transfer_evs_d2p_stats_aigefs.list
+    outfile=transfer_evs_${mode}_stats_aigefs.list
     rm -f "${outfile}"
 
     echo "${src_path} ${dest_path}" >> ${outfile}
@@ -49,7 +70,7 @@ if [[ "${model}" == "aigefs" ]]; then
         echo "+ /aigefs/atmos.${pdy}/hgefs/***" >> ${outfile}
     done
 elif [[ "${model}" == "aigfs" ]]; then
-    outfile=transfer_evs_d2p_stats_aigfs.list
+    outfile=transfer_evs_${mode}_stats_aigfs.list
     rm -f "${outfile}"
 
     echo "${src_path} ${dest_path}" >> ${outfile}

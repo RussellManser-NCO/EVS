@@ -1,0 +1,39 @@
+suite prod
+family primary
+family cron
+family transfer
+family v2.4
+family wcoss_2
+  family evs
+    edit MACHINE_PHASE 'p1'
+    edit PACKAGE 'evs'
+    edit model_ver '%evs_ver%'
+    family para2prod
+      defstatus complete
+      edit transfer_samemachine 'YES'
+      edit RSYNC_OPTIONS '-rlptD'
+      task prep_aigfs
+        label l ""
+        cron 00:00 23:59 00:05
+        edit WALLCLOCK '24:00:00'
+      task prep_aigefs
+        label l ""
+        cron 00:00 23:59 00:05
+        edit WALLCLOCK '24:00:00'
+      task stats_aigfs
+        label l ""
+        cron 00:00 23:59 00:05
+        edit WALLCLOCK '24:00:00'
+      task stats_aigefs
+        label l ""
+        cron 00:00 23:59 00:05
+        edit WALLCLOCK '24:00:00'
+      endfamily # para2prod
+    endfamily   # evs
+  endfamily     # wcoss_2
+endfamily       # v2.4
+endfamily       # transfer
+endfamily       # cron
+endfamily       # primary
+endsuite
+
